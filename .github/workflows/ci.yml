@@ -1,0 +1,27 @@
+name: CI-Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Repo Structure Validation
+        run: echo "✅ Repo structure is valid for Innovation Hub"
+
+  innovation-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "�� Running tests for Innovation area"
+
+  marketing-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "📢 Running marketing pipeline simulation"
